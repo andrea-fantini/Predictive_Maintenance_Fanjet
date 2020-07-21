@@ -1,11 +1,13 @@
-name: Jet
+name: Jet_clean
 channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.5
+  - pandas-profiling
   - nb_conda_kernels
+  - python=3.8
   - pandas
   - seaborn
-  - pandas-profiling
-
+  - swifter
+  - scikit-learn
+  - modin
