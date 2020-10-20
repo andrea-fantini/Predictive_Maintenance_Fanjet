@@ -6,7 +6,7 @@ This model aims at predicting the imminent failure of a jet engine. It is based 
 - For the summary of the business relevance, data analysis and results see the [Slide Deck](reports/presentation.pdf)
 - For the write up on the techniques used for the data analysis and modeling see the [White Paper](reports/white_paper.md)
 - For the python code walk-through from importing the data to making predictions see the [Jupyter notebooks](notebooks/)
-- To replicate the results see the [Set up](#resource-identifiers) instructions below
+- To replicate the results see the [Set up](#set-up) instructions below
 
 Project Organization
 ------------
@@ -24,6 +24,8 @@ Project Organization
     │   ├── 3 - Exploratory Data Analysis.ipynb
     │   ├── 4 - Data Pre-processing.ipynb
     │   └── 5 - Modeling.ipynb
+    |
+    ├── reports          <- Contains the slide deck and white paper.
     |
     ├── environment.yml
     |
