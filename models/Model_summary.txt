@@ -1,6 +1,6 @@
-pickle filename: pickle_bayes_search_model_2020-10-18 18:01:04.933374.pkl
+pickle filename: pickle_bayes_search_model_2020-10-18 20:03:06.122143.pkl
 Classifier: RandomForest()
-Model Parameters : {('C', 156.81728269807493), ('gamma', 0.20540985697592978), ('kernel', 'rbf')}
-CV Score :0.7880374194173816
-Test Score :0.8388057422113623
-Cost :-8484
+Model Parameters : {('criterion', 'entropy'), ('max_depth', 6), ('n_estimators', 1000)}
+CV Score :0.7919150792496729
+Test Score :0.8328497251069029
+Cost : -7738

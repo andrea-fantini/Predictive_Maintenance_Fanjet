@@ -4,7 +4,6 @@ Predictive Maintenance for Turbofan Jet Engine
 This model aims at predicting the imminent failure of a jet engine. It is based on Engine Degradation Simulation data released in 2008 by the Prognostics Center of Excellence at NASA’s Ames research center.
 
 - For the summary of the business relevance, data analysis and results see the [Slide Deck](reports/presentation.pdf)
-- For the write up on the techniques used for the data analysis and modeling see the [White Paper](reports/white_paper.md)
 - For the python code walk-through from importing the data to making predictions see the [Jupyter notebooks](notebooks/)
 - To replicate the results see the [Set up](#set-up) instructions below
 
