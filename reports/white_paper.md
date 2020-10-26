@@ -63,11 +63,11 @@ The only difference between the `test.csv` and `train.csv` data is the fact that
 
 Since the data is the result of a simulation there is little to no manipulation that needs to be done in order to get the data ready for modeling. There are no duplicates or missing values. Checking for outliers with a 1.5*IQR window highlights a large amount of points. These are highlighted in red in the figures below. 
 
-![Cycle Time](/home/andrea/Dropbox/PyProjects/Predictive_Maintenance_Fanjet/figures/outliers/train_outliers_cycle_time.png)
+![Cycle Time](report_figures/train_outliers_cycle_time.png)
 
-![Operating Setting 3](/home/andrea/Dropbox/PyProjects/Predictive_Maintenance_Fanjet/figures/outliers/train_outliers_op_setting_3.png)
+![Operating Setting 3](report_figures/train_outliers_op_setting_3.png)
 
-![Sensor 14](/home/andrea/Dropbox/PyProjects/Predictive_Maintenance_Fanjet/figures/outliers/train_outliers_s14.png)
+![Sensor 14](report_figures/train_outliers_s14.png)
 
 
 
@@ -79,11 +79,11 @@ By visual analysis of these figures we conclude that these points are simply ext
 
 The first element which we explore of this dataset is the 3 columns containing the operating settings. By plotting them in a 3D plot we observe that the combination of these settings clusters around 6 distinct points in space, we call these *operating regimes*. We apply the unsupervised learning technique of k-means clustering to automatically label the data. In the image below, each color corresponds to a different label and the cross-hairs are positioned at the center of the cluster. 
 
-![Operating Condition clusters](/home/andrea/Dropbox/PyProjects/Predictive_Maintenance_Fanjet/figures/Op_regime_clustering.png)modelling
+![Operating Condition clusters](report_figures/Op_regime_clustering.png)modelling
 
 By plotting the newly created `op_regime` label against the `dataset` category we observe that dataset FD001 and FD003 only contain data with one operating regime. While dataset FD002 and FD004 contain data in all 6 operating regimes. 
 
-![Operating Regimes in each dataset](/home/andrea/Dropbox/PyProjects/Predictive_Maintenance_Fanjet/figures/Op_regime_vs_dataset.png)
+![Operating Regimes in each dataset](report_figures/Op_regime_vs_dataset.png)
 
 This analysis has been conducted on both training and testing data with identical results. 
 
@@ -93,7 +93,7 @@ Based on these finding we decide to narrow down the scope of the first modeling 
 
 We know from the data summary that the common point in time for all engine units in the training dataset is the last cycle, which corresponds to the failure of the engine. This means that plotting the sensors traces against the `cycle_time` is not the best way to visualize the data. We decide then to convert the `cycle_time` axis into a Remaining Usable Life `RUL` variable that aligns all the sensor traces to the 'right', i.e. to the engine failure (red line). Plotting all the traces at once would result in a crowded and not clear plot. We randomly select 10 engine units for plotting and we overlay the 10-cycle rolling average to filter out noisy behavior. The resulting plot, for the dataset FD001, is displayed below.
 
-![sensor traces](/home/andrea/Dropbox/PyProjects/Predictive_Maintenance_Fanjet/figures/FD001_sensor_traces.png)
+![sensor traces](report_figures/FD001_sensor_traces.png)
 
 From this we observe how sensors `s1`, `s5`, `s6`,`s10`,`s16`, `s18`, and `s19` have very low variance and do not display any correlation with the `RUL` variable. 
 
@@ -110,17 +110,17 @@ There are at least two approaches that we can take to model this dataset and obt
 (3) Alert, less than 50 cycles from failure.
 
 
-![Category Lables](/home/andrea/Dropbox/PyProjects/Predictive_Maintenance_Fanjet/figures/Category_Labels_train.png)
+![Category Lables](report_figures/Category_Labels_train.png)
 
 The choice of these values has been driven by a visual analysis of the data, however it's reasonable to expect that they can be adjusted to best fit the advance notice needed by the service and maintenance supply chain. 
 
 Intuitively one can observe how there is an imbalance between the classes since class 3 covers a wider range of cycles. If we plot an histogram of the training dataset, we therefore observe that the prevalent class is #3.
 
-![Imbalanced dataset]()
+![Imbalanced dataset](report_figures/class_imbalance.png)
 
 Because of this imbalance we decide to create an alternative dataset, which is balanced by random oversampling, for comparison purposes.
 
-![Balanced dataset]()
+![Balanced dataset](report_figures/class_rebalanced.png)
 
 ### Feature Selection
 
