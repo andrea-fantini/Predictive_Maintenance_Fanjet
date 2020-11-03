@@ -46,7 +46,7 @@ For ease of use we consolidate the data into a more compact data structure that 
 data 
 ├── RUL.csv 
 ├── test.csv 
-└── train.csv
+/home/andrea/Dropbox/PyProjects/Predictive_Maintenance_Fanjet/figures└── train.csv
 ```
 
  The `test.csv` and `train.csv` have identical structure:

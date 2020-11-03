@@ -1,6 +1,6 @@
-pickle filename: pickle_bayes_search_model_2020-10-18 20:03:06.122143.pkl
-Classifier: RandomForest()
-Model Parameters : {('criterion', 'entropy'), ('max_depth', 6), ('n_estimators', 1000)}
-CV Score :0.7919150792496729
-Test Score :0.8328497251069029
-Cost : -7738
+pickle filename: pickle_bayes_search_model_2020-11-01 23:21:14.303596.pkl
+Classifier: GradientBoostingClassifier()
+Model Parameters : {('learning_rate', 1.0), ('max_depth', 16), ('max_features', 15), ('min_samples_leaf', 0.1), ('min_samples_split', 0.1), ('n_estimators', 200)}
+CV Score :0.8615683692346283
+Test Score :0.8017715332926084
+Cost : -8021
