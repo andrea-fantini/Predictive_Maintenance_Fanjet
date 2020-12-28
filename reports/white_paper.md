@@ -140,11 +140,45 @@ The output variable is the `status` column of the dataset.
 
 ## Machine Learning Models
 
-blah blah
+### Baseline 
 
-## Future Improvements
+To establish a baseline we used the `DummyClassifier` class from `sklearn.dummy`. We 'trained' classifiers with the following strategies:
+- most frequent
+- stratified
+- prior
+- uniform
+After comparing the results we adopted the *most frequent* classifier as our baseline. With this model we obtaina classiication accuracy of ~76%
+![Dummy Classifier Confusion Matrix](report_figures/most_frequent_classifier.png)
 
-fjfj
+### Model Selection
+
+To choose which classification model to adopt for our prediction and to narrow down the list of the models to optimize, we first train a set of popular models with their default parameters:
+- Neirest Neighbor Classifier
+- Decision Tree Classifier
+- Rndom Forest Classifier
+- Support Vector Machine
+- Gradient Boosting Classifier
+- Ada Boost Classifier
+
+#### Scoring - Cost Matrix
+ITo rank these models we construct a cost matrix which we will apply to the confusion marix to estimate the total cost due to misclassification errors. 
+![Cost Matrix](report_figures/Cost_Matrix.png)
+At this stage, this costs are arbitrary values based on common sense logic, in the future these could be actual costs of anticipating a maintenance event or not catching afailure on time.
+
+### Model comparison
+In comparing the models we also compared the performance on the stock dataset for which the majority class is the normal behavior, and a dataset which has been balanced with random oversampling of the two minority categories. 
+![imbalanced](report_figures/)
+![rebalanced](report_figures/)
+The results are reported in the image below. We observe that balancing the classes does not have a positive impact on accuracy, but it does result on lower cost models for almost all types of classifiers. From now on we will only work with the balanced dataset. 
+![models comparison](report_figures/)
+
+### Parameter Tuning
+![Gradient Boosing Confusion Matrix - Best](report_figures/pickle_bayes_search_model_2020-11-01 23:21:14.303596.pkl.png)
+ blah 
+ ![SVC confusion matrix](report_figures/pickle_bayes_search_model_2020-11-02 02:35:55.203397.pkl.png)
+
+### Model Selection
+
 
 ## References
 
